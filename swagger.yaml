@@ -7,7 +7,7 @@ paths:
   "/users/token":
     post:
       tags:
-      - users
+        - users
       summary: Login For Access Token
       operationId: login_for_access_token_users_token_post
       requestBody:
@@ -17,13 +17,13 @@ paths:
               "$ref": "#/components/schemas/Body_login_for_access_token_users_token_post"
         required: true
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/Token"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -32,7 +32,7 @@ paths:
   "/users/":
     post:
       tags:
-      - users
+        - users
       summary: Create User
       operationId: create_user_users__post
       requestBody:
@@ -42,13 +42,13 @@ paths:
             schema:
               "$ref": "#/components/schemas/UserCreate"
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/UserRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -56,26 +56,26 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     get:
       tags:
-      - users
+        - users
       summary: Read Users
       operationId: read_users_users__get
       parameters:
-      - name: skip
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 0
-          title: Skip
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 100
-          title: Limit
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+            title: Skip
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 100
+            title: Limit
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
@@ -84,7 +84,7 @@ paths:
                 items:
                   "$ref": "#/components/schemas/UserRead"
                 title: Response Read Users Users  Get
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -93,39 +93,39 @@ paths:
   "/users/me":
     get:
       tags:
-      - users
+        - users
       summary: Read Users Me
       operationId: read_users_me_users_me_get
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/UserRead"
       security:
-      - OAuth2PasswordBearer: []
+        - OAuth2PasswordBearer: []
   "/users/{user_id}":
     get:
       tags:
-      - users
+        - users
       summary: Read User
       operationId: read_user_users__user_id__get
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/UserRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -133,16 +133,16 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     put:
       tags:
-      - users
+        - users
       summary: Update User
       operationId: update_user_users__user_id__put
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       requestBody:
         required: true
         content:
@@ -150,13 +150,13 @@ paths:
             schema:
               "$ref": "#/components/schemas/UserUpdate"
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/UserRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -164,24 +164,24 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     delete:
       tags:
-      - users
+        - users
       summary: Delete User
       operationId: delete_user_users__user_id__delete
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/UserRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -190,7 +190,7 @@ paths:
   "/products/":
     post:
       tags:
-      - products
+        - products
       summary: Create Product
       operationId: create_product_products__post
       requestBody:
@@ -200,13 +200,13 @@ paths:
             schema:
               "$ref": "#/components/schemas/ProductCreate"
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ProductRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -214,26 +214,26 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     get:
       tags:
-      - products
+        - products
       summary: Read Products
       operationId: read_products_products__get
       parameters:
-      - name: skip
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 0
-          title: Skip
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 100
-          title: Limit
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+            title: Skip
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 100
+            title: Limit
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
@@ -242,7 +242,7 @@ paths:
                 items:
                   "$ref": "#/components/schemas/ProductRead"
                 title: Response Read Products Products  Get
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -251,24 +251,24 @@ paths:
   "/products/{product_id}":
     get:
       tags:
-      - products
+        - products
       summary: Read Product
       operationId: read_product_products__product_id__get
       parameters:
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Product Id
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Product Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ProductRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -276,16 +276,16 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     put:
       tags:
-      - products
+        - products
       summary: Update Product
       operationId: update_product_products__product_id__put
       parameters:
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Product Id
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Product Id
       requestBody:
         required: true
         content:
@@ -293,13 +293,13 @@ paths:
             schema:
               "$ref": "#/components/schemas/ProductCreate"
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ProductRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -307,24 +307,24 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     delete:
       tags:
-      - products
+        - products
       summary: Delete Product
       operationId: delete_product_products__product_id__delete
       parameters:
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Product Id
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Product Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ProductRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -333,7 +333,7 @@ paths:
   "/reviews/":
     post:
       tags:
-      - reviews
+        - reviews
       summary: Create Review
       operationId: create_review_reviews__post
       requestBody:
@@ -343,49 +343,49 @@ paths:
               "$ref": "#/components/schemas/ReviewCreate"
         required: true
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ReviewRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
       security:
-      - OAuth2PasswordBearer: []
+        - OAuth2PasswordBearer: []
   "/reviews/product/{product_id}":
     get:
       tags:
-      - reviews
+        - reviews
       summary: Read Reviews For Product
       operationId: read_reviews_for_product_reviews_product__product_id__get
       parameters:
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Product Id
-      - name: skip
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 0
-          title: Skip
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 100
-          title: Limit
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Product Id
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+            title: Skip
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 100
+            title: Limit
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
@@ -393,9 +393,10 @@ paths:
                 type: array
                 items:
                   "$ref": "#/components/schemas/ReviewRead"
-                title: Response Read Reviews For Product Reviews Product  Product
+                title:
+                  Response Read Reviews For Product Reviews Product  Product
                   Id  Get
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -404,24 +405,24 @@ paths:
   "/reviews/{review_id}":
     get:
       tags:
-      - reviews
+        - reviews
       summary: Read Review
       operationId: read_review_reviews__review_id__get
       parameters:
-      - name: review_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Review Id
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Review Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ReviewRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -429,24 +430,24 @@ paths:
                 "$ref": "#/components/schemas/HTTPValidationError"
     delete:
       tags:
-      - reviews
+        - reviews
       summary: Delete Review
       operationId: delete_review_reviews__review_id__delete
       parameters:
-      - name: review_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Review Id
+        - name: review_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Review Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/ReviewRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -455,24 +456,24 @@ paths:
   "/cart/{user_id}":
     get:
       tags:
-      - cart
+        - cart
       summary: Read Cart
       operationId: read_cart_cart__user_id__get
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/CartRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -481,16 +482,16 @@ paths:
   "/cart/{user_id}/items":
     post:
       tags:
-      - cart
+        - cart
       summary: Add To Cart
       operationId: add_to_cart_cart__user_id__items_post
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       requestBody:
         required: true
         content:
@@ -498,13 +499,13 @@ paths:
             schema:
               "$ref": "#/components/schemas/CartItemAdd"
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/CartRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -513,30 +514,30 @@ paths:
   "/cart/{user_id}/items/{product_id}":
     delete:
       tags:
-      - cart
+        - cart
       summary: Remove From Cart
       operationId: remove_from_cart_cart__user_id__items__product_id__delete
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Product Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Product Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/CartRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -545,24 +546,24 @@ paths:
   "/orders/from_cart/{user_id}":
     post:
       tags:
-      - orders
+        - orders
       summary: Create Order From Cart
       operationId: create_order_from_cart_orders_from_cart__user_id__post
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/OrderRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -571,24 +572,24 @@ paths:
   "/orders/{order_id}":
     get:
       tags:
-      - orders
+        - orders
       summary: Read Order
       operationId: read_order_orders__order_id__get
       parameters:
-      - name: order_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: Order Id
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Order Id
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/OrderRead"
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -597,32 +598,32 @@ paths:
   "/orders/user/{user_id}":
     get:
       tags:
-      - orders
+        - orders
       summary: Read Orders For User
       operationId: read_orders_for_user_orders_user__user_id__get
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: integer
-          title: User Id
-      - name: skip
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 0
-          title: Skip
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: integer
-          default: 100
-          title: Limit
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: User Id
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+            title: Skip
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 100
+            title: Limit
       responses:
-        '200':
+        "200":
           description: Successful Response
           content:
             application/json:
@@ -631,7 +632,7 @@ paths:
                 items:
                   "$ref": "#/components/schemas/OrderRead"
                 title: Response Read Orders For User Orders User  User Id  Get
-        '422':
+        "422":
           description: Validation Error
           content:
             application/json:
@@ -643,9 +644,9 @@ components:
       properties:
         grant_type:
           anyOf:
-          - type: string
-            pattern: "^password$"
-          - type: 'null'
+            - type: string
+              pattern: "^password$"
+            - type: "null"
           title: Grant Type
         username:
           type: string
@@ -657,22 +658,22 @@ components:
         scope:
           type: string
           title: Scope
-          default: ''
+          default: ""
         client_id:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Client Id
         client_secret:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           format: password
           title: Client Secret
       type: object
       required:
-      - username
-      - password
+        - username
+        - password
       title: Body_login_for_access_token_users_token_post
     CartItemAdd:
       properties:
@@ -684,8 +685,8 @@ components:
           title: Quantity
       type: object
       required:
-      - product_id
-      - quantity
+        - product_id
+        - quantity
       title: CartItemAdd
     CartRead:
       properties:
@@ -702,8 +703,8 @@ components:
           default: []
       type: object
       required:
-      - cart_id
-      - user
+        - cart_id
+        - user
       title: CartRead
     HTTPValidationError:
       properties:
@@ -727,9 +728,9 @@ components:
           title: Total Amount
         created_at:
           anyOf:
-          - type: string
-            format: date-time
-          - type: 'null'
+            - type: string
+              format: date-time
+            - type: "null"
           title: Created At
         user:
           "$ref": "#/components/schemas/UserSimple"
@@ -741,11 +742,11 @@ components:
           default: []
       type: object
       required:
-      - order_id
-      - status
-      - total_amount
-      - created_at
-      - user
+        - order_id
+        - status
+        - total_amount
+        - created_at
+        - user
       title: OrderRead
     ProductCreate:
       properties:
@@ -754,22 +755,22 @@ components:
           title: Name
         description:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Description
         price:
           anyOf:
-          - type: number
-          - type: string
+            - type: number
+            - type: string
           title: Price
         stock_quantity:
           type: integer
           title: Stock Quantity
       type: object
       required:
-      - name
-      - price
-      - stock_quantity
+        - name
+        - price
+        - stock_quantity
       title: ProductCreate
     ProductRead:
       properties:
@@ -781,8 +782,8 @@ components:
           title: Name
         description:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Description
         price:
           type: string
@@ -798,10 +799,10 @@ components:
           default: []
       type: object
       required:
-      - product_id
-      - name
-      - price
-      - stock_quantity
+        - product_id
+        - name
+        - price
+        - stock_quantity
       title: ProductRead
     ProductSimple:
       properties:
@@ -816,9 +817,9 @@ components:
           title: Price
       type: object
       required:
-      - product_id
-      - name
-      - price
+        - product_id
+        - name
+        - price
       title: ProductSimple
     ReviewCreate:
       properties:
@@ -833,9 +834,9 @@ components:
           title: Product Id
       type: object
       required:
-      - rating
-      - comment
-      - product_id
+        - rating
+        - comment
+        - product_id
       title: ReviewCreate
     ReviewRead:
       properties:
@@ -850,9 +851,9 @@ components:
           title: Comment
         created_at:
           anyOf:
-          - type: string
-            format: date-time
-          - type: 'null'
+            - type: string
+              format: date-time
+            - type: "null"
           title: Created At
         user:
           "$ref": "#/components/schemas/UserSimple"
@@ -860,12 +861,12 @@ components:
           "$ref": "#/components/schemas/ProductSimple"
       type: object
       required:
-      - review_id
-      - rating
-      - comment
-      - created_at
-      - user
-      - product
+        - review_id
+        - rating
+        - comment
+        - created_at
+        - user
+        - product
       title: ReviewRead
     Token:
       properties:
@@ -877,8 +878,8 @@ components:
           title: Token Type
       type: object
       required:
-      - access_token
-      - token_type
+        - access_token
+        - token_type
       title: Token
     UserCreate:
       properties:
@@ -896,10 +897,10 @@ components:
           title: Password
       type: object
       required:
-      - username
-      - email
-      - name
-      - password
+        - username
+        - email
+        - name
+        - password
       title: UserCreate
     UserRead:
       properties:
@@ -917,17 +918,17 @@ components:
           title: User Id
         created_at:
           anyOf:
-          - type: string
-            format: date-time
-          - type: 'null'
+            - type: string
+              format: date-time
+            - type: "null"
           title: Created At
       type: object
       required:
-      - username
-      - email
-      - name
-      - user_id
-      - created_at
+        - username
+        - email
+        - name
+        - user_id
+        - created_at
       title: UserRead
     UserSimple:
       properties:
@@ -939,30 +940,30 @@ components:
           title: Username
       type: object
       required:
-      - user_id
-      - username
+        - user_id
+        - username
       title: UserSimple
     UserUpdate:
       properties:
         username:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Username
         email:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Email
         password:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Password
         name:
           anyOf:
-          - type: string
-          - type: 'null'
+            - type: string
+            - type: "null"
           title: Name
       type: object
       title: UserUpdate
@@ -971,8 +972,8 @@ components:
         loc:
           items:
             anyOf:
-            - type: string
-            - type: integer
+              - type: string
+              - type: integer
           type: array
           title: Location
         msg:
@@ -983,9 +984,9 @@ components:
           title: Error Type
       type: object
       required:
-      - loc
-      - msg
-      - type
+        - loc
+        - msg
+        - type
       title: ValidationError
   securitySchemes:
     OAuth2PasswordBearer:
